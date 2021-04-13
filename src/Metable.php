@@ -497,7 +497,7 @@ trait Metable
      */
     private function getMetaCollection()
     {
-        if (!$this->relationLoaded('meta')) {
+        if (!$this->relationLoaded('meta') || ! $this->indexedMetaCollection) {
             $this->setRelation('meta', $this->meta()->get());
         }
 
